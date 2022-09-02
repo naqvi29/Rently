@@ -1,0 +1,266 @@
+{% extends 'layout.html' %} 
+{% block title %}Search Car{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="input_multy">
+        <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Pick-Up Location *">
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group mt-1">
+                    <input type="DATE" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group mt-1">
+                    <input type="time" name="time" class="form-control">
+
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+
+                <!-- <div  class="custom-control  custom-radio">
+                    <input type="radio" id="customRadio1"  name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio1">FULL DAY</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">SHORT RENTAL</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio3">SELF DRIVE</label>
+                </div> -->
+                <div class="radio_tabs">
+                    <label class="radio_wrap" data-radio="radio_1">
+                        <input type="radio" name="sports" class="input" checked>
+                        <span class="radio_mark">
+                            FULL DAY
+                        </span>
+                    </label>
+                    <label class="radio_wrap" data-radio="radio_2">
+                        <input type="radio" name="sports" class="input">
+                        <span class="radio_mark">
+                            SHORT RENTAL
+                        </span>
+                    </label>
+                    <label class="radio_wrap" data-radio="radio_3">
+                        <input type="radio" name="sports" class="input">
+                        <span class="radio_mark">
+                            SELF DRIVE
+                        </span>
+                    </label>
+
+                </div>
+
+
+            </div>
+        </div>
+        <button class="btn btn-dark btn-book">Book Now</button>
+    </div>
+</div>
+
+
+</section>
+
+
+
+<section class="search-car-header">
+<div class="content radio_con">
+    <div class="radio_content radio_1">
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="car">
+                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="car-details">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>HONDA Civic</h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="cut">8,000 </span>
+                                <h3 class="">7,500 PKR/day</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="">
+                                    See all details
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio8" name="customRadio5"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio8">In City</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio9" name="customRadio5"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio9">Out City</label>
+                                </div>
+                            </div>
+                            <span> <i class="fa fa-user"></i> With Driver</span>
+                            <span> <i class="fa fa-droplet "></i> Air Cond.
+                            </span>
+                            <span> <i class="fa fa-person"></i> 4 Doors
+                            </span>
+                            <span> <i class="fa fa-gear"></i> Automatic</span>
+                            <br>
+                            <br>
+                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
+                            </span>
+                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
+                            </span>
+                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
+                            <br>
+                            <br>
+                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <div class="radio_content radio_2">
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="car">
+                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="car-details">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Audi 3</h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="cut">8,000 </span>
+                                <h3 class="">7,500 PKR/day</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="">
+                                    See all details
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>In City Only</h6>
+                                <!-- <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio12" name="customRadio15"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio12">In City</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio13" name="customRadio15"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio13">Out City</label>
+                                </div> -->
+                            </div>
+                            <span> <i class="fa fa-user"></i> With Driver</span>
+                            <span> <i class="fa fa-droplet "></i> Air Cond.
+                            </span>
+                            <span> <i class="fa fa-person"></i> 4 Doors
+                            </span>
+                            <span> <i class="fa fa-gear"></i> Automatic</span>
+                            <br>
+                            <br>
+                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
+                            </span>
+                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
+                            </span>
+                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
+                            <br>
+                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    <div class="radio_content radio_3">
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="car">
+                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="car-details">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Corolla</h2>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio10" name="customRadio5"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio10">14 DAYS</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio11" name="customRadio5"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio11">24 DAYS</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio16" name="customRadio5"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio16">30 DAYS</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="cut">8,000 </span>
+                                <h3 class="">7,500 PKR/day</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="">
+                                    See all details
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                               
+                            </div>
+                            <span> <i class="fa fa-user"></i> With Driver</span>
+                            <span> <i class="fa fa-droplet "></i> Air Cond.
+                            </span>
+                            <span> <i class="fa fa-person"></i> 4 Doors
+                            </span>
+                            <span> <i class="fa fa-gear"></i> Automatic</span>
+                            <br>
+                            <br>
+                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
+                            </span>
+                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
+                            </span>
+                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
+                            <br>
+                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+
+        
+{% endblock %}
