@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/book-now.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="header_top">
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo/logo.png" alt=""></a>
+
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <a class="nav-link" href="about.html">About Us <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="search-car.html">Search A Car</a>
+                <a class="nav-link" href="corporate-enquiries.html">Corporate Enquiries</a>
+                <a class="nav-link" href="our-clients.html">Our Client</a>
+
+                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <div class="dropdown">
+                    <a class="nav-link" href="#" class="dropbtn"><i class="fa fa-caret-down"></i> My
+                        Account</a>
+                    <div class="dropdown-content">
+                        <a href="userprofile.html">My Profile</a>
+                        <a href="mybookings.html">My Booking</a>
+                        <a href="#">Sign Out</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="img-user">
+                        <img src="assets/images/logo/user.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="user-detail">
+                        <h3>User Name</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Active
+                            </label>
+                        </div>
+                        <button class="btn btn-dark">Eited</button> <button class="btn btn-dark">Change
+                            Password</button>
+
+                        <div class="tabset">
+                            <!-- Tab 1 -->
+                            <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+                            <label for="tab1"> <i class="fa fa-users"></i> About Us</label>
+                            <!-- Tab 2 -->
+                            <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+                            <label for="tab2"> <i class="fa fa-location-dot"></i> Address</label>
+                            <!-- Tab 3 -->
+                            <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+                            <label for="tab3"> <i class="fa fa-id-card"></i> Documents</label>
+
+                            <div class="tab-panels">
+                                <section id="marzen" class="tab-panel">
+                                    <h5>CONTACT INFORMATION</h5>
+
+                                    <hr>
+                                    <hr>
+
+                                    <div class="usere-data">
+                                        <div class="left">Phone</div>
+                                        <div class="right"> 03178557398</div>
+
+                                    </div>
+                                    <hr>
+                                    <div class="usere-data">
+                                        <div class="left">Address</div>
+                                        <div class="right"> -----</div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="usere-data">
+                                        <div class="left">Email</div>
+                                        <div class="right"> hafizsaad8557@gmail.com</div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="usere-data">
+                                        <div class="left">Gender </div>
+                                        <div class="right"> Male</div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="usere-data">
+                                        <div class="left">DOB </div>
+                                        <div class="right"> 16 sep 2001</div>
+
+                                    </div>
+                                    <hr>
+                                    <br><br>
+                                    <h5>BASIC INFORMATION
+                                    </h5>
+                                    <hr>
+                                    <hr>
+
+
+                                    <div class="usere-data">
+                                        <div class="left">Created On: </div>
+                                        <div class="right"> 6/21/22, 1:37 PM</div>
+
+                                    </div>
+                                    <hr>
+
+                                </section>
+                                <section id="rauchbier" class="tab-panel">
+                                    <h5>Add Address</h5>
+                                    <div class="form-group">
+                                        <input type="street" class="form-control" id="autocomplete"
+                                            placeholder="Street">
+
+                                        <input type="city" class="form-control" id="inputCity" placeholder="City">
+
+                                        <input type="state" class="form-control" id="inputState" placeholder="State">
+
+                                        <input type="zip" class="form-control" id="inputZip" placeholder="Zip">
+
+                                        <input type="county" class="form-control" id="inputCounty" placeholder="County">
+
+                                        <a class="btn btn-outline-danger  text-white" id="inputCountry"> Add Address </a>
+                                    </div>
+
+                                </section>
+                                <section id="dunkles" class="tab-panel">
+                                    <h2>UPDATE DOCUMENTS</h2>
+                                    <form>
+
+                                        <div class="row">
+                                            <label for="exampleInputEmail1">CNIC</label>
+                                            <input type="CNIC" class="form-control" id="CNIC" aria-describedby="CNIC"
+                                                placeholder="Enter CNIC Number">
+
+                                            <div class="col">
+                                                <label for="formGroupExampleInput">CNIC Front Image *</label>
+                                                <input type="file" class="form-control" placeholder="First name">
+                                            </div>
+                                            <div class="col">
+                                                <label for="formGroupExampleInput">CNIC Back Image *</label>
+                                                <input type="file" class="form-control" placeholder="Last name">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form>
+                                        <div class="row">
+                                            <label for="exampleInputEmail1">LICENSE </label>
+                                            <input type="text" class="form-control" id="LICENSE"
+                                                placeholder="Enter LICENSE Number ">
+
+
+                                            <div class="col">
+                                                <label for="formGroupExampleInput">LICENSE Front Image *</label>
+                                                <input type="file" class="form-control" placeholder="First name">
+                                            </div>
+                                            <div class="col">
+                                                <label for="formGroupExampleInput">LICENSE Back Image *</label>
+                                                <input type="file" class="form-control" placeholder="Last name">
+                                            </div>
+                                        </div>
+                                        <a href="" class="btn btn-outline-danger "> Submit </a>
+                                    </form>
+                                </section>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <div class="top_footer">
+
+    </div>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>1010 Avenue, sw 54321, chandigarh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="assets/images/logo/logo.png" class="img-fluid"
+                                        alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor
+                                    incididuntut consec
+                                    tetur adipisicing
+                                    elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h5>Useful Links</h5>
+                            </div>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About US</a></li>
+                <li><a href="search-car.html">Search A Car</a></li>
+                <li><a href="corporate-enquiries.html">Corporate Enquiries</a></li>
+                <li><a href="our-clients.html">Our Client</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="sign.html">Registration</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h5>Subscribe</h5>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" id="email" name="email" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2018, All Right Reserved <a href="">Webtrica</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000, //2000ms = 2s;
+            autoplayHoverPause: true,
+        });
+    </script>
+
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+
+
+</body>
+
+</html>
