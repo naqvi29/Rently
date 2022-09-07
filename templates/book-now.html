@@ -6,17 +6,17 @@
 {% endblock %}
 {% block content %}   
 
-        <form id="stepped" action="#" method="post">
+        <form id="stepped" action="/book-now/{{car_id}}/{{type}}" method="post">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <h1 class="text-center py-3">You selected Short Rental Booking Type.</h1>
+                        <h1 class="text-center py-3">You selected {{type | capitalize}} Booking Type.</h1>
                     </div>
                     <div class="col-md-10">
                         <div class="indicators d-flex justify-content-around py-4 text-light">
                             <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">1 Pick-Up</div>
                             <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">2 Drop-Off</div>
-                            <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">3 Base Renta</div>
+                            <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">3 Base Rental</div>
                             <div class="rounded-circle bg-secondary px-2 shadow-sm">
                                 4 Confirmation</div>
                         </div>
@@ -28,7 +28,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="inp1">Enter Your Pick-Up Date</label>
-                                            <input type="DATE" id="inp1" class="form-control">
+                                            <input type="DATE" name="pickup_date" id="inp1" class="form-control">
 
 
                                         </div>
@@ -36,18 +36,19 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="inp12">Time</label>
-                                            <input type="time" name="time" id="inp12" class="form-control">
+                                            <input type="time" name="pickup_time" id="inp12" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inp2"> Enter Your Location by clicking on the pin icon</label>
-                                    <input type="text" id="inp2" class="form-control"
+                                    <input type="text" id="inp2" name="pickup_location" class="form-control"
                                         placeholder="Enter Your Location by clicking on the pin icon">
+                                        <map name="workmap">
                                 </div>
                                 <div class="form-group">
                                     <label for="inp2">Additional Pick-Up Description</label>
-                                    <input type="text" id="inp2" class="form-control"
+                                    <input type="text" name="pickup_desc" id="inp2" class="form-control"
                                         placeholder="Additional Pick-Up Description">
                                 </div>
 
@@ -55,12 +56,12 @@
                             <div class="steps">
                                 <div class="form-group">
                                     <label for="inp2"> Enter Your Location by clicking on the pin icon</label>
-                                    <input type="text" id="inp2" class="form-control"
+                                    <input type="text" id="inp2" name="dropoff_location" class="form-control"
                                         placeholder="Enter Your Location by clicking on the pin icon">
                                 </div>
                                 <div class="form-group">
                                     <label for="inp2">Additional Drop-Off Description</label>
-                                    <input type="text" id="inp2" class="form-control"
+                                    <input type="text" id="inp2" name="dropoff_desc" class="form-control"
                                         placeholder="Additional Pick-Up Description">
                                 </div>
                             </div>
@@ -78,8 +79,10 @@
                                         <h6>Booking Type: general</h6>
                                         </p>
                                         <div class="img">
-                                            <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid"
+                                            <img src="/static/images/cars/{{car['pic']}}" class="img-fluid"
                                                 alt="">
+                                            <!-- <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid"
+                                                alt=""> -->
                                         </div>
 
                                     </div>

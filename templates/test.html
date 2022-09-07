@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script src="https://cdn.getaddress.io/scripts/getaddress-typeahead-1.0.2.min.js">
+</script>
+</head>
+<body>
+    <label>Postcode Example:</label>
+    <input id="typeahead-postcode" type="text">
+
+    <label>Town or City Example:</label>
+    <input id="typeahead-town-or-city" type="text">
+
+    <label>County Example:</label>
+    <input id="typeahead-county" type="text">
+
+    <label>Country Example:</label>
+    <input id="typeahead-country" type="text">
+</body>
+
+<!-- after your form -->
+<script>
+    getAddress.typeahead('typeahead-postcode','postcode','8_nr7S0fJ0uKKNyjLmjveg25832');
+
+    getAddress.typeahead('typeahead-town-or-city','town_or_city','8_nr7S0fJ0uKKNyjLmjveg25832');
+
+    getAddress.typeahead('typeahead-county','county','8_nr7S0fJ0uKKNyjLmjveg25832');
+
+    getAddress.typeahead('typeahead-country','country','8_nr7S0fJ0uKKNyjLmjveg25832');
+</script>
+</html>

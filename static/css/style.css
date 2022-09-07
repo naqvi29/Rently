@@ -1506,3 +1506,9 @@ select:focus {
     font-size: 12px;
 
 }
+
+/* Groot  */
+.error{
+    text-align: center;
+    color: red;
+}

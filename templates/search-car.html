@@ -40,20 +40,20 @@
                 </div> -->
                 <div class="radio_tabs">
                     <label class="radio_wrap" data-radio="radio_1">
-                        <input type="radio" name="sports" class="input" checked>
-                        <span class="radio_mark">
+                        <input type="radio" name="sports" class="input" checked value="full_day">
+                        <span class="radio_mark" style="color: white;">
                             FULL DAY
                         </span>
                     </label>
                     <label class="radio_wrap" data-radio="radio_2">
-                        <input type="radio" name="sports" class="input">
-                        <span class="radio_mark">
+                        <input type="radio" name="sports" class="input" value="short_rental">
+                        <span class="radio_mark" style="color: white;">
                             SHORT RENTAL
                         </span>
                     </label>
                     <label class="radio_wrap" data-radio="radio_3">
-                        <input type="radio" name="sports" class="input">
-                        <span class="radio_mark">
+                        <input type="radio" name="sports" class="input" value="self_drive">
+                        <span class="radio_mark" style="color: white;">
                             SELF DRIVE
                         </span>
                     </label>
@@ -63,7 +63,7 @@
 
             </div>
         </div>
-        <button class="btn btn-dark btn-book">Book Now</button>
+        <!-- <button class="btn btn-dark btn-book">Book Now</button> -->
     </div>
 </div>
 
@@ -74,34 +74,39 @@
 
 <section class="search-car-header">
 <div class="content radio_con">
+    {% for i in cars %}
     <div class="radio_content radio_1">
         <div class="container ">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="car">
-                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
+                        <img src="/static/images/cars/{{i.pic}}" width="1024" height="645" class="img-fluid" alt="">
+                        <!-- <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt=""> -->
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="car-details">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2>HONDA Civic</h2>
+                                <h2>{{i.name}}</h2>
                             </div>
                             <div class="col-sm-6">
                                 <span class="cut">8,000 </span>
-                                <h3 class="">7,500 PKR/day</h3>
+                                <h3 class="">{{i.price_per_day}} PKR/day</h3>
                             </div>
                             <div class="col-sm-6">
                                 <a href="">
                                     See all details
                                 </a>
                             </div>
+                            {% if i.city == "out" %}
                             <div class="col-sm-6">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="customRadio8" name="customRadio5"
                                         class="custom-control-input">
                                     <label class="custom-control-label" for="customRadio8">In City</label>
+
+                                    
                                 </div>
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="customRadio9" name="customRadio5"
@@ -109,82 +114,29 @@
                                     <label class="custom-control-label" for="customRadio9">Out City</label>
                                 </div>
                             </div>
-                            <span> <i class="fa fa-user"></i> With Driver</span>
-                            <span> <i class="fa fa-droplet "></i> Air Cond.
-                            </span>
-                            <span> <i class="fa fa-person"></i> 4 Doors
-                            </span>
-                            <span> <i class="fa fa-gear"></i> Automatic</span>
-                            <br>
-                            <br>
-                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
-                            </span>
-                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
-                            </span>
-                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
-                            <br>
-                            <br>
-                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
-
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-
-        </div>
-    </div>
-    <div class="radio_content radio_2">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="car">
-                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="car-details">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h2>Audi 3</h2>
-                            </div>
-                            <div class="col-sm-6">
-                                <span class="cut">8,000 </span>
-                                <h3 class="">7,500 PKR/day</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="">
-                                    See all details
-                                </a>
-                            </div>
+                            {% elif i.city == "in" %}
                             <div class="col-sm-6">
                                 <h6>In City Only</h6>
-                                <!-- <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio12" name="customRadio15"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio12">In City</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio13" name="customRadio15"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio13">Out City</label>
-                                </div> -->
                             </div>
-                            <span> <i class="fa fa-user"></i> With Driver</span>
-                            <span> <i class="fa fa-droplet "></i> Air Cond.
+                            {% endif %}
+                            <span> <i class="fa fa-user"></i> {% if i.with_driver==true%}With Driver{%else%}Without Driver{%endif%}</span>
+                            <span> <i class="fa fa-droplet "></i> {% if i.ac==true%}With Air Cond.{%else%}Without Air Cond.{%endif%}
                             </span>
                             <span> <i class="fa fa-person"></i> 4 Doors
                             </span>
-                            <span> <i class="fa fa-gear"></i> Automatic</span>
+                            <span> <i class="fa fa-gear"></i> {{ i.transmission | capitalize }}</span>
                             <br>
                             <br>
-                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
+                            <span> <i class="fa fa-clock"></i> Overtime: PKR {{i.overtime}}/-
                             </span>
-                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
+                            <span> <i class="fa fa-gas-pump"></i> Fuel Average ({{i.fuel_average}} KM/LTR)
                             </span>
-                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
+                            <!-- <span> <i class="fa fa-gas-pump"></i> Fuel (PKR {{i.fuel_average}}/KM)
+                            </span> -->
+                            <span> <i class="fa fa-hourglass"></i> Full Day ({{i.full_day}}hrs) </span>
                             <br>
-                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
+                            <br>
+                            <button onclick="booknow('{{i._id}}')" class="btn btn-dark btn-book">Book Now</button>
 
                         </div>
                     </div>
@@ -194,73 +146,21 @@
 
         </div>
     </div>
-    <div class="radio_content radio_3">
-        <div class="container ">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="car">
-                        <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="car-details">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h2>Corolla</h2>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio10" name="customRadio5"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio10">14 DAYS</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio11" name="customRadio5"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio11">24 DAYS</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio16" name="customRadio5"
-                                        class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio16">30 DAYS</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <span class="cut">8,000 </span>
-                                <h3 class="">7,500 PKR/day</h3>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="">
-                                    See all details
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                               
-                            </div>
-                            <span> <i class="fa fa-user"></i> With Driver</span>
-                            <span> <i class="fa fa-droplet "></i> Air Cond.
-                            </span>
-                            <span> <i class="fa fa-person"></i> 4 Doors
-                            </span>
-                            <span> <i class="fa fa-gear"></i> Automatic</span>
-                            <br>
-                            <br>
-                            <span> <i class="fa fa-clock"></i> Overtime: PKR 300/-
-                            </span>
-                            <span> <i class="fa fa-gas-pump"></i> Fuel (PKR 22/KM)
-                            </span>
-                            <span> <i class="fa fa-hourglass"></i> Full Day (10hrs) </span>
-                            <br>
-                            <a href="book-now.html" class="btn btn-dark btn-book">Book Now</a>
-
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-
-        </div>
-    </div>
+    {% endfor %}
 </div>
 </section>
+
+<script>
+    function booknow(id){
+        console.log("clicked");
+        console.log(id);    
+        radio = document.querySelector('input[name="sports"]:checked').value;
+        console.log(radio);
+        window.location.href = "/book-now/"+id+"/"+radio;
+        
+
+    }
+</script>
 
         
 {% endblock %}
