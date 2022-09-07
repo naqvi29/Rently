@@ -4,6 +4,7 @@
 {{ super() }}
 <script src="https://cdn.getaddress.io/scripts/getaddress-autocomplete-1.1.3.min.js">
 </script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% endblock %}
 {% block content %}
 <div class="demo-cont">
@@ -414,3 +415,17 @@
       getAddress.autocomplete('formatted_address_0','8_nr7S0fJ0uKKNyjLmjveg25832');
       
   </script>
+
+
+{% block scripts %}
+{% if booked %}
+<script>
+  Swal.fire(
+  'Success!',
+  'Your booking is confirmed ',
+  'success'
+)
+</script>
+{% endif %}
+
+{% endblock %}

@@ -6,29 +6,30 @@
 {% endblock %}
 {% block content %}   
 
+       
         <form id="stepped" action="/book-now/{{car_id}}/{{type}}" method="post">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <h1 class="text-center py-3">You selected {{type | capitalize}} Booking Type.</h1>
+                        <h1 class="text-center py-3">You selected Short Rental Booking Type.</h1>
                     </div>
                     <div class="col-md-10">
                         <div class="indicators d-flex justify-content-around py-4 text-light">
                             <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">1 Pick-Up</div>
                             <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">2 Drop-Off</div>
-                            <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">3 Base Rental</div>
+                            <div class="rounded-circle bg-secondary px-2 shadow-sm mr-2">3 Base Renta</div>
                             <div class="rounded-circle bg-secondary px-2 shadow-sm">
                                 4 Confirmation</div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="fix-height position-relative">
                             <div class="steps">
                                 <div class="row justify-content-center">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="inp1">Enter Your Pick-Up Date</label>
-                                            <input type="DATE" name="pickup_date" id="inp1" class="form-control">
+                                            <input type="DATE" id="inp1" name="pickup_date" class="form-control">
 
 
                                         </div>
@@ -36,7 +37,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="inp12">Time</label>
-                                            <input type="time" name="pickup_time" id="inp12" class="form-control">
+                                            <input type="time" name="time" name="pickup_time" id="inp12" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +45,6 @@
                                     <label for="inp2"> Enter Your Location by clicking on the pin icon</label>
                                     <input type="text" id="inp2" name="pickup_location" class="form-control"
                                         placeholder="Enter Your Location by clicking on the pin icon">
-                                        <map name="workmap">
                                 </div>
                                 <div class="form-group">
                                     <label for="inp2">Additional Pick-Up Description</label>
@@ -79,10 +79,8 @@
                                         <h6>Booking Type: general</h6>
                                         </p>
                                         <div class="img">
-                                            <img src="/static/images/cars/{{car['pic']}}" class="img-fluid"
+                                            <img src="/static/images/cars/{{car.pic}}" class="img-fluid"
                                                 alt="">
-                                            <!-- <img src="/static/images/cars/1581613723188-civic.png" class="img-fluid"
-                                                alt=""> -->
                                         </div>
 
                                     </div>
@@ -92,26 +90,42 @@
                                             <br> Co-Operative...
                                         <p>Jun 21, 2022, 3:07 PM</p>
                                         <div class="custom-control custom-radio">
+                                            {% if type == "full day" %}
                                             <input type="radio" id="customRadio1" name="customRadio"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">FULL DAY</label>
+                                                class="custom-control-input" value="full_day" checked>
+                                            {%else%}
+                                            <input type="radio" id="customRadio1" name="customRadio"
+                                                class="custom-control-input" value="full_day">
+                                            {%endif%}
+                                            <label class="custom-control-label color-1" for="customRadio1">FULL DAY</label>
                                         </div>
                                         <div class="custom-control custom-radio">
+                                            {% if type == "short rental" %}
                                             <input type="radio" id="customRadio2" name="customRadio"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio2">SHORT RENTAL</label>
+                                                class="custom-control-input"  value="short_rental" checked>
+                                            {% else %}
+                                            <input type="radio" id="customRadio2" name="customRadio"
+                                                class="custom-control-input"  value="short_rental">
+                                            {%endif%}
+                                            <label class="custom-control-label color-1" for="customRadio2">SHORT RENTAL</label>
                                         </div>
                                         <div class="custom-control custom-radio">
+                                            {% if type == "self drive" %}
                                             <input type="radio" id="customRadio3" name="customRadio"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio3">SELF DRIVE</label>
+                                                class="custom-control-input"  value="self_drive" checked>
+                                            {%else%}
+                                            <input type="radio" id="customRadio3" name="customRadio"
+                                                class="custom-control-input"  value="self_drive">
+                                            {%endif%}
+                                            <label class="custom-control-label color-1" for="customRadio3">SELF DRIVE</label>
                                         </div>
                                         </p>
 
-                                        <h3>
-                                            HONDA Civic</h3>
+                                        <h1>
+                                            HONDA Civic</h1>
+                                            <span>(with driver)</span>
                                     </div>
-                                    <div class="col-6 col-sm-3">
+                                    <div class="col-6 col-sm-3 border_book" >
                                         <p>Rate / day</p>
                                         <p>Fuel / kilometer *</p>
                                         <p>Base Fare</p>
@@ -120,13 +134,13 @@
                                         <P>Discount Code (if any)</P>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="customRadio5" name="customRadio4"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio5">In City</label>
+                                                class="custom-control-input" value="in">
+                                            <label class="custom-control-label color-1" for="customRadio5">In City</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="customRadio4" name="customRadio4"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio4">Out City</label>
+                                                class="custom-control-input" value="out">
+                                            <label class="custom-control-label color-1" for="customRadio4">Out City</label>
                                         </div>
                                         <p>Amount Payable
                                             *Excluding fuel & overtime charges
@@ -154,7 +168,7 @@
                                 </div> -->
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1 inp4">
-                                    <label class="custom-control-label" for="customCheck1 inp4">Kindly note that the
+                                    <label class="custom-control-label color-1" for="customCheck1 inp4">Kindly note that the
                                         Fuel Charges and Overtime will be applied based on the mileage of the car and
                                         extra hours of the services (if any).Your final invoice will be generated after
                                         adding the Fuel and Overtime charges at the end of your reservation. For more
@@ -163,7 +177,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 text-right">
+                    <div class="col-md-8 text-right mt_button">
                         <button type="button" class="btnPrev btn btn-outline-danger">Prev</button>
                         <button type="button" class="btnNext btn btn-outline-danger">Next</button>
                     </div>

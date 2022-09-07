@@ -4,7 +4,8 @@
 body {
     font-family: 'Lora', serif;
     background-color: #fff;
-    color: #5dbeb9;
+    color: #000;
+    /* color: #5dbeb9; */
 }
 
 hr {
@@ -1511,4 +1512,32 @@ select:focus {
 .error{
     text-align: center;
     color: red;
+}
+
+.border_book {
+    border-left: 1px solid rgb(189, 189, 189);
+}
+.col-sm-3 .img img{
+    height: 250px;
+} 
+.mt_button {
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.btnNext{
+    margin: 20px;
+    width: 200px;
+    padding: 10px;
+}
+.btnPrev{
+    margin: 20px;
+    width: 200px;
+    padding: 10px;
+} 
+
+.color-1{
+    color: #000 !important;
 }

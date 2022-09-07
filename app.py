@@ -159,16 +159,30 @@ def book_now(id,type):
         pickup_desc = request.form.get("pickup_desc")
         dropoff_location = request.form.get("dropoff_location")
         dropoff_desc = request.form.get("dropoff_desc")
+        type = request.form.get("customRadio")
+        city = request.form.get("customRadio4")
         print(pickup_date)
         print(pickup_time)
         print(pickup_location)
         print(pickup_desc)
         print(dropoff_location)
         print(dropoff_desc  )
-        return "booked"
+        new_data = {
+            "pickup_date":pickup_date,
+            "pickup_time":pickup_time,
+            "pickup_location":pickup_location,
+            "pickup_desc":pickup_desc,
+            "dropoff_location":dropoff_location,
+            "dropoff_desc":dropoff_desc,
+            "type":type,
+            "city":city
+        }
+        db.bookings.insert_one(new_data)
+        return render_template("index.html",booked=True)
     type = type.replace("_"," ")
     car = db.cars.find_one({"_id":ObjectId(id)})
-    car = car.update({"_id":str(car["_id"])})
+    # car = car.update({"_id":str(car["_id"])})
+    # return str(car)
     return render_template("book-now.html",type=type,car_id=id,car=car)
 
 @app.route("/blog")
